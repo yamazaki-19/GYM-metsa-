@@ -1,0 +1,15 @@
+@use '../foundation/settings/index' as *;
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 160px;
+  height: 34px;
+  background-color: var(--colorKey);
+  color: #fff;
+
+  @include media() {
+    margin-top: 120px;
+  }
+}

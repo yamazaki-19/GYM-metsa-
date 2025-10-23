@@ -1,0 +1,23 @@
+@use './settings/index' as *;
+
+// サイト全体の基本設定
+body {
+  color: var(--colorBlack);
+  font-size: 16px;
+  font-family: var(--fontGothic);
+  line-height: 1.8;
+}
+a {
+  transition: opacity var(--speed);
+
+  @include hover {
+    opacity: .7;
+  }
+}
+
+// 画像全て適用　はみ出さないようにしてすき間できるバグ対策
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}

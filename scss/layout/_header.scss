@@ -1,0 +1,110 @@
+@use '../foundation/settings/index' as *;
+
+body.is-open {
+  @include media() {
+    overflow: hidden;
+  }
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  margin-bottom: 50px;
+  padding: 0 16px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+
+  @include media() {
+    position: fixed;
+  }
+}
+
+.header_inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 63px;
+
+  @include media() {
+    height: 41px;
+  }
+}
+
+.header_logo {
+  width: 141px;
+
+  @include media() {
+    position: relative;
+    z-index: 10;
+  }
+}
+
+.header_nav {
+  @include media {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background-color: #fff;
+    opacity: 0;
+    transition: .4s;
+    pointer-events: none;
+
+    .is-open & {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+
+.header_nav_list {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 14px;
+
+  @include media {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 140px;
+    font-size: 18px;
+  }
+
+  .current {
+    text-decoration: underline;
+
+    @include media {
+      text-decoration: none;
+    }
+  }
+}
+
+.nav_button {
+  @include media {
+    z-index: 10;
+  }
+}
+
+.nav_open {
+  .is-open & {
+    display: none;
+  }
+}
+
+.nav_close {
+  display: none;
+
+  .is-open & {
+    display: block;
+  }
+}

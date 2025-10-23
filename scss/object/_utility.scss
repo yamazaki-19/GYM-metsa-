@@ -1,0 +1,14 @@
+@use '../foundation/settings/index' as *;
+
+
+.pc_none {
+  @media (min-width: 767px) {
+    display: none !important;
+  }
+}
+
+.sp_none {
+  @include media() {
+    display: none !important;
+  }
+}

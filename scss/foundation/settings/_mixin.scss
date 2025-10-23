@@ -1,0 +1,15 @@
+//メディアクエリ
+@mixin media($breakpoint: 768px) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+// ホバー
+@mixin hover() {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
