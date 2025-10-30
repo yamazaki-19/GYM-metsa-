@@ -4,8 +4,8 @@
 <?php
 if (have_posts()) {
 	while (have_posts()) : the_post();
-		// 投稿日
-		$single_time = get_the_date('Y.m.d');
+		// 更新日
+		$single_time = get_the_modified_date('Y.m.d');
 		// カテゴリー
 		$terms = get_the_terms($post->ID, 'news_taxonomy');
 		if (!empty($terms) && !is_wp_error($terms)) {
@@ -28,7 +28,7 @@ if (have_posts()) {
 				<!-- タイトル -->
 				<h1 class="single_title"><?php the_title(); ?></h1>
 
-				<!-- 投稿日・カテゴリー -->
+				<!-- 更新日・カテゴリー -->
 				<div class="single_data">
 					<time class="single_time" data-time="<?= $single_time; ?>"><?= $single_time; ?></time>
 
