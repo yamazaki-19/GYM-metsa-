@@ -35,3 +35,40 @@
     --swiper-pagination-bullet-horizontal-gap: 4px;
   }
 }
+// スタイルのみ
+.mv_message {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  width: 340px;
+  height: 118px;
+  background-color: rgba(202, 202, 202, .5);
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, .25);
+  letter-spacing: .05em;
+  font-weight: 700;
+  font-size: 28px;
+  font-family: var(--fontMincho);
+  line-height: 1.4;
+
+  @include media() {
+   width: 315px;
+  }
+}
+.mv {
+  position: relative;
+}
+
+// position
+.mv_message {
+  position: absolute;
+  top: 160px;
+  right: calc(50% + 100px);
+  z-index: 2;
+
+  @include media() {
+    top: 134px;
+    right: auto;
+    left: 0;
+  }
+}

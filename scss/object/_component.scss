@@ -1,0 +1,98 @@
+@use '../foundation/settings/index' as *;
+
+.main {
+  @include media() {
+    margin-top: 40px;
+    padding-top: 60px;
+
+    &.front_page {
+      padding-top: 0;
+    }
+  }
+}
+
+// セクション
+.section {
+  margin-top: 100px;
+
+  @include media() {
+    margin-top: 60px;
+  }
+}
+
+// 見出し
+.section_title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+  letter-spacing: .05em;
+  font-size: 28px;
+  font-family: var(--fontEnglish);
+  line-height: 1.2;
+
+  @include media() {
+    margin-bottom: 20px;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    margin-top: 17px;
+    width: 30px;
+    height: 1px;
+    background-color: #c8c8c8;
+  }
+}
+
+
+// ボタン
+.button_area {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+
+  @include media() {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 90vw;
+  }
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 16px 10px;
+  min-width: 400px;
+  min-height: 46px;
+  border: 1px solid #a7d0d0;
+  border-radius: 4px;
+  background-color: #fff;
+  color: var(--colorLink);
+  text-align: center;
+  line-height: 1.2;
+  transition: .3s;
+
+  @include hover {
+    opacity: .4;
+  }
+  @include media() {
+    min-width: auto;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 11px;
+    display: block;
+    width: .5em;
+    height: .5em;
+    border: 2px solid;
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(-45deg) translateY(-50%);
+  }
+}

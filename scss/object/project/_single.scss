@@ -1,0 +1,176 @@
+@use '../../foundation/settings/index' as *;
+
+// お知らせ
+.single_inner {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 800px;
+  width: 90%;
+}
+
+.single_title {
+  margin-bottom: 20px;
+  padding: 12px 20px;
+  width: 100%;
+  border-left: 5px solid;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.single_data {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.single_time {
+  font-size: 14px;
+  font-family: var(--fontEnglish);
+  line-height: 1.5;
+}
+
+.single_taxonomy {
+  margin-left: 48px;
+  font-size: 14px;
+  line-height: 1.5;
+
+  span {
+    font-weight: 700;
+  }
+}
+
+.single_image {
+  @include media() {
+    aspect-ratio: 337 / 337;
+    object-fit: cover;
+  }
+}
+
+// ブロックエディタ
+.single_content {
+  margin-top: 36px;
+
+  @include media() {
+    margin-top: 65px;
+  }
+
+  h2 {
+    margin: 1em 0;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  p {
+    a {
+      color: var(--colorLink);
+      text-decoration: underline;
+    }
+
+    + p {
+      margin-top: 1em;
+    }
+  }
+}
+
+
+// ナビボタン
+.single_nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 980px;
+
+  @include media() {
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+  }
+}
+
+.single_navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  padding-top: 46px;
+  width: 40.81632653%;
+  border-bottom: 1px solid #a7d0d0;
+  line-height: 1.5;
+
+  @include media() {
+    padding-top: 16px;
+    padding-left: 40px;
+    width: 100%;
+  }
+
+  span {
+    position: absolute;
+    top: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+
+    @include media() {
+      position: static;
+      display: block;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: .5em;
+    height: .5em;
+    border: 2px solid;
+    border-top: 0;
+    border-left: 0;
+  }
+}
+
+.single_prev {
+  padding-left: 70px;
+
+  @include media() {
+    padding-left: 40px;
+  }
+
+  span {
+    left: 70px;
+  }
+
+  &::after {
+    left: 16px;
+    transform: rotate(135deg) translateY(-50%);
+
+    @include media() {
+      left: 4px;
+    }
+  }
+}
+.single_next {
+  margin-left: auto;
+  padding-right: 70px;
+
+  @include media() {
+    padding-right: 40px;
+  }
+
+  span {
+    left: 16px;
+  }
+
+  &::after {
+    right: 16px;
+    transform: rotate(-45deg) translateY(-50%);
+
+    @include media() {
+      right: 4px;
+    }
+  }
+}
