@@ -174,3 +174,152 @@
     }
   }
 }
+// 商品カタログ
+.catalog_inner {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 980px;
+  width: 90%;
+}
+
+.catalog_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include media() {
+    flex-direction: column;
+  }
+}
+
+.catalog_image {
+  width: 53.77551%;
+  height: 400px;
+
+  @include media() {
+    width: 100%;
+    height: auto;
+  }
+
+  img {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @include media() {
+      height: auto;
+      aspect-ratio: 337 / 250;
+    }
+  }
+}
+
+.catalog_purchase {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 41.73469388%;
+
+  @include media() {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+.catalog_title {
+  font-weight: 700;
+  font-size: 24px;
+
+  .single_taxonomy {
+    margin-left: 0;
+    font-weight: normal;
+
+    @include media() {
+      margin-bottom: .5em;
+    }
+
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
+.catalog_price {
+  margin-top: 56px;
+  font-weight: 700;
+  font-size: 31px;
+  font-family: 'Lora', serif;
+  line-height: 1.5;
+
+  @include media() {
+    margin-top: 20px;
+  }
+
+  span {
+    margin-left: 8px;
+    font-weight: normal;
+    font-size: 16px;
+    font-family: var(--fontGothic);
+  }
+}
+
+.catalog_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  min-height: 48px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: var(--colorKey);
+  color: #fff;
+
+  @include media() {
+    border-radius: 4px;
+  }
+}
+
+.catalog_section {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 30px;
+
+  @include media() {
+    margin-top: 60px;
+  }
+}
+
+.catalog_product {
+  width: 53.77551%;
+
+  @include media() {
+    width: 100%;
+  }
+}
+
+.catalog_data {
+  width: 41.73469388%;
+
+  @include media() {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  tr {
+    border: 1px solid #ddd;
+    border-right: 0;
+    border-left: 0;
+  }
+
+  th {
+    padding: 8px 16px;
+    background-color: #f5f5f5;
+    font-weight: normal;
+  }
+
+  td {
+    padding: 8px 16px;
+  }
+}

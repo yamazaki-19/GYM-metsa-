@@ -4,8 +4,8 @@
 <?php
 if (have_posts()) {
 	while (have_posts()) : the_post();
-		// 更新日
-		$single_time = get_the_modified_date('Y.m.d');
+		// 投稿日
+        $single_time = get_the_date('Y.m.d');
 		// カテゴリー
 		$terms = get_the_terms($post->ID, 'news_taxonomy');
 		if (!empty($terms) && !is_wp_error($terms)) {
