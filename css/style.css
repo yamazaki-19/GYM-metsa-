@@ -693,6 +693,7 @@ input[type=submit] {
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  text-align: center;
 }
 @media (max-width: 768px) {
   input[type=submit] {

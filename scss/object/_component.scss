@@ -188,6 +188,7 @@ input[type='submit'] {
   line-height: 1.5;
   cursor: pointer;
   transition: .3s;
+  text-align: center;
 
   @include media() {
     line-height: 1;
