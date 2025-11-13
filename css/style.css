@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! destyle.css v2.0.2 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 /* Reset box-model and set borders */
 /* ============================================ */
@@ -568,6 +569,140 @@ img {
   border-left: 0;
   -webkit-transform: rotate(-45deg) translateY(-50%);
           transform: rotate(-45deg) translateY(-50%);
+}
+
+form p + p {
+  margin-top: 16px;
+}
+
+label {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+input[type=text], input[type=email], input[type=tel] {
+  margin-top: 8px;
+  padding: 13px 16px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+input[type=text]::-webkit-input-placeholder, input[type=email]::-webkit-input-placeholder, input[type=tel]::-webkit-input-placeholder {
+  color: #aaa;
+}
+input[type=text]::-moz-placeholder, input[type=email]::-moz-placeholder, input[type=tel]::-moz-placeholder {
+  color: #aaa;
+}
+input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder, input[type=tel]:-ms-input-placeholder {
+  color: #aaa;
+}
+input[type=text]::-ms-input-placeholder, input[type=email]::-ms-input-placeholder, input[type=tel]::-ms-input-placeholder {
+  color: #aaa;
+}
+input[type=text]::placeholder, input[type=email]::placeholder, input[type=tel]::placeholder {
+  color: #aaa;
+}
+
+.wpcf7-form-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wpcf7-list-item {
+  display: block;
+  margin-top: 8px;
+  margin-left: 0;
+}
+.wpcf7-list-item label {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+textarea {
+  margin-top: 8px;
+  padding: 13px 16px;
+  min-height: 238px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+textarea::-webkit-input-placeholder {
+  color: #aaa;
+}
+textarea::-moz-placeholder {
+  color: #aaa;
+}
+textarea:-ms-input-placeholder {
+  color: #aaa;
+}
+textarea::-ms-input-placeholder {
+  color: #aaa;
+}
+textarea::placeholder {
+  color: #aaa;
+}
+
+.contact_privacy {
+  margin-top: 45px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .contact_privacy {
+    margin-top: 0;
+  }
+}
+.contact_privacy a {
+  color: var(--colorKey);
+  text-decoration: underline;
+}
+
+input[type=submit] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 16px 0;
+  max-width: 400px;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--colorKey);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+@media (max-width: 768px) {
+  input[type=submit] {
+    line-height: 1;
+  }
+}
+@media (hover: hover) {
+  input[type=submit]:hover {
+    opacity: 0.8;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1278,6 +1413,69 @@ img {
 .page-numbers.prev::after {
   -webkit-transform: translate(-50%, -50%) rotate(135deg);
           transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.catalog_inner {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 980px;
+  width: 90%;
+}
+
+.catalog_archive {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 16px 1fr 16px 1fr 16px 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 24px 16px;
+}
+@media (max-width: 768px) {
+  .catalog_archive {
+    -ms-grid-columns: 1fr 16px 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.catalog_thumb {
+  width: 100%;
+  aspect-ratio: 233/102;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 768px) {
+  .catalog_thumb {
+    aspect-ratio: 160/102;
+  }
+}
+
+.catalog_name {
+  margin-top: 8px;
+  font-weight: 700;
+}
+
+.catalog_desc {
+  display: -webkit-box;
+  overflow: hidden; /* 内容がオーバーフローした場合に非表示にします */
+  -webkit-box-orient: vertical; /* ブロック方向の内容の流れを設定します */
+  margin-top: 8px;
+  color: var(--colorGray);
+  text-overflow: ellipsis;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-line-clamp: 4; /* 表示する行数を4に制限します */
+}
+@media (max-width: 768px) {
+  .catalog_desc {
+    -webkit-line-clamp: 3; /* 表示する行数を4に制限します */
+  }
+}
+
+.page-contact form {
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 680px;
+  width: 90%;
 }
 
 @media (min-width: 767px) {

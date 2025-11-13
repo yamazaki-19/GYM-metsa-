@@ -45,3 +45,34 @@ function custom_news_rewrite_rule()
 	add_rewrite_rule('news/([0-9]+)/?$', 'index.php?post_type=news&p=$matches[1]', 'top');
 }
 add_action('init', 'custom_news_rewrite_rule');
+// カスタム投稿タイプのURLをIDに変更する関数
+function customize_post_permalink($post_link, $post) {
+    // もし投稿が 'news' または 'catalog' のカスタム投稿タイプならば
+	if ($post->post_type == 'news' || $post->post_type == 'catalog') {
+        // 新しいURL構造を返します。例：yourwebsite.com/news/123
+		return home_url($post->post_type . '/' . $post->ID . '/');
+	} else {
+        // それ以外の場合は、元のURL構造をそのまま返します。
+		return $post_link;
+	}
+}
+// 'post_type_link' フィルターに関数を追加します。これにより、指定した投稿タイプのURLが生成されるときにこの関数が呼び出されます。
+add_filter('post_type_link', 'customize_post_permalink', 1, 2);
+
+// 新しいリライトルールを追加する関数
+function custom_post_rewrite_rules() {
+    // 'news' と 'catalog' の各カスタム投稿タイプに対してリライトルールを追加します。
+    // これにより、yourwebsite.com/news/123 のようなURLにアクセスしたときに、適切な投稿を表示できるようになります。
+    add_rewrite_rule(
+        'news/([0-9]+)/?$',
+        'index.php?post_type=news&p=$matches[1]',
+        'top'
+    );
+    add_rewrite_rule(
+        'catalog/([0-9]+)/?$',
+        'index.php?post_type=catalog&p=$matches[1]',
+        'top'
+    );
+}
+// 'init' アクションに関数を追加します。WordPressが初期化されるときに、これらのリライトルールを設定します。
+add_action('init', 'custom_post_rewrite_rules');

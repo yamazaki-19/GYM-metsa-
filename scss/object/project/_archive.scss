@@ -95,3 +95,51 @@
     }
   }
 }
+// 商品カタログ
+.catalog_inner {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 980px;
+  width: 90%;
+}
+
+.catalog_archive {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 24px 16px;
+  @include media() {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.catalog_thumb {
+  width: 100%;
+  aspect-ratio: 233 / 102;
+  object-fit: cover;
+
+  @include media() {
+    aspect-ratio: 160 / 102;
+  }
+}
+
+.catalog_name {
+  margin-top: 8px;
+  font-weight: 700;
+}
+
+.catalog_desc {
+  display: -webkit-box;
+  overflow: hidden; /* 内容がオーバーフローした場合に非表示にします */
+  -webkit-box-orient: vertical; /* ブロック方向の内容の流れを設定します */
+  margin-top: 8px;
+  color: var(--colorGray);
+  text-overflow: ellipsis;
+  font-size: 14px;
+  line-height: 1.5;
+
+  -webkit-line-clamp: 4; /* 表示する行数を4に制限します */
+  @include media() {
+    -webkit-line-clamp: 3; /* 表示する行数を4に制限します */
+  }
+}
