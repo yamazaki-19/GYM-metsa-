@@ -1479,6 +1479,10 @@ input[type=submit] {
   width: 90%;
 }
 
+.page404_text {
+  text-align: center;
+}
+
 @media (min-width: 767px) {
   .pc_none {
     display: none !important;

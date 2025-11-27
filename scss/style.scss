@@ -17,7 +17,7 @@
 @use './object/project/single';
 @use './object/project/archive';
 @use './object/project/page';
-
+@use './object/project/page404';
 
 // 強制的に上書き
 @use './object/utility';
